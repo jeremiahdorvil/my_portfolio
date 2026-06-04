@@ -1,0 +1,133 @@
+.logo-container {
+    z-index: 0;
+    width: 400px;
+    height: 609px;
+    position: absolute;
+    top: 0;
+    right: 15%;
+    bottom: 0;
+    left: auto;
+    margin: auto;
+    opacity: 0;
+
+    svg {
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        transform: rotateZ(30deg) !important;
+    }
+
+    .solid-logo {
+        position: absolute;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: 0;
+        margin: auto;
+        width: 100%;
+        opacity: 0;
+        transform: rotateZ(30deg);
+        z-index: 1;
+    }
+}
+
+.svg-container {
+    stroke: #40e0d0;
+    stroke-width: 10px;
+}
+
+.logo-j-svg {
+  width: 280px;
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* 3D side shape */
+.j-side {
+  fill: url('#sideGradient');
+  stroke: #00ffff;
+  stroke-width: 3;
+  opacity: 0.55;
+  filter: url('#tealGlow');
+}
+
+/* Main front shape */
+.j-front-fill {
+  fill: url('#frontGradient');
+  opacity: 0.45;
+  stroke: none;
+}
+
+/* This is the main path you can use for SVG draw animation */
+.j-draw-outline {
+  fill: transparent;
+  stroke: #00ffff;
+  stroke-width: 5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  filter: url('#tealGlow');
+
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawJ 3s ease forwards;
+}
+
+/* White/gray professional highlight */
+.j-inner-highlight {
+  fill: none;
+  stroke: #f5f5f5;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
+
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: drawJ 2.4s ease forwards 0.5s;
+}
+
+/* Loose sketch line */
+.j-sketch-line {
+  fill: none;
+  stroke: #40e0d0;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  opacity: 0.7;
+
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: drawJ 2.8s ease forwards 0.8s;
+}
+
+/* Hatch marks */
+.j-hatching path,
+.j-face-hatching path,
+.j-guide-marks path {
+  fill: none;
+  stroke: #40e0d0;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  opacity: 0.55;
+
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: drawSketch 1.8s ease forwards 1.4s;
+}
+
+.j-guide-marks path {
+  stroke: #f5f5f5;
+  opacity: 0.75;
+}
+
+@keyframes drawJ {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawSketch {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
